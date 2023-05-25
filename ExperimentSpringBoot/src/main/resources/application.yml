@@ -1,0 +1,33 @@
+logging.file : /var/tmp/mylog.log
+server :
+  port : 8090
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname : localhost
+spring:
+  application:
+    name: LearningSpringBoot
+  config:
+    import: optional:configserver:http://localhost:8888
+  boot:
+    admin:
+      url: http://localhost:8090/
+
+management:
+  security:
+    enabled: false
+
+springdoc :
+  enable-native-support : true
+  swagger-ui.path : /swagger-ui
+
+app:
+  couchbase:
+    connection-string : couchbase://127.0.0.1
+    user-name : Admin
+    password : test123
+    primary-bucket : ProductTest
+

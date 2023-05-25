@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: APIGE
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+server:
+  port: 8082
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    instance:
+      hostname : localhost
+
